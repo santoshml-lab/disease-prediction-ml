@@ -134,3 +134,26 @@ At threshold 0.50:
 Actual
 No Disease        29          4
 Disease            2         26     2         26
+
+``markdown
+## Clinical Interpretation of Errors
+
+The confusion matrix should be interpreted carefully in a healthcare context.
+
+A false positive means the model predicts disease for a case whose target indicates no disease. In a real screening workflow, this could result in additional testing, unnecessary concern, or increased healthcare resource use.
+
+A false negative means the model predicts no disease for a case whose target indicates disease. This could potentially delay further evaluation if such a prediction were incorrectly relied upon.
+
+At threshold 0.50, the model produced 4 false positives and 2 false negatives.
+
+Because missed positive cases can be particularly concerning in a screening context, threshold 0.50 was preferred over threshold 0.60, which produced 3 false negatives.
+
+However, these observations come from a small educational dataset and do not establish clinical safety or effectiveness.
+
+## Limitations & Prohibited Use
+
+This model must never be used as a standalone diagnostic system or as a replacement for qualified medical professionals.
+
+It must not be used to diagnose individual patients, determine treatment, make emergency medical decisions, or make other clinical decisions without appropriate clinical validation and professional oversight.
+
+The dataset contains only 303 observations and may not represent modern or diverse patient populations. The model has not undergone external or prospective clinical validation.
